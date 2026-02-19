@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HEM Africa</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -17,7 +16,7 @@
 
 body{
     font-family:'Inter',sans-serif;
-    background:#ffffff;
+    background:#fff;
     color:#000;
     line-height:1.6;
     overflow-x:hidden;
@@ -29,7 +28,7 @@ nav{
     width:100%;
     top:0;
     left:0;
-    padding:25px 80px;
+    padding:25px 60px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -37,15 +36,15 @@ nav{
     z-index:1000;
 }
 
-nav .logo{
+.logo{
     font-weight:700;
     font-size:20px;
     letter-spacing:2px;
 }
 
 nav ul{
-    display:flex;
     list-style:none;
+    display:flex;
 }
 
 nav ul li{
@@ -56,11 +55,47 @@ nav ul li a{
     text-decoration:none;
     color:#000;
     font-weight:500;
-    transition:0.3s ease;
 }
 
 nav ul li a:hover{
     opacity:0.5;
+}
+
+/* MOBILE MENU */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+    nav{
+        padding:20px;
+    }
+
+    nav ul{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:#fff;
+        flex-direction:column;
+        width:200px;
+        padding:20px;
+        display:none;
+        box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    nav ul li{
+        margin:15px 0;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
 }
 
 /* HERO */
@@ -69,7 +104,7 @@ nav ul li a:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:0 80px;
+    padding:0 60px;
 }
 
 .hero-text{
@@ -78,23 +113,23 @@ nav ul li a:hover{
 
 .hero-text h1{
     font-size:60px;
-    font-weight:700;
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
 .hero-text p{
     font-size:20px;
     color:#555;
-    margin-bottom:35px;
+    margin-bottom:30px;
 }
 
 .buttons{
     display:flex;
     gap:20px;
+    flex-wrap:wrap;
 }
 
 .btn{
-    padding:14px 32px;
+    padding:14px 30px;
     border:1px solid #000;
     cursor:pointer;
     transition:0.3s ease;
@@ -120,53 +155,75 @@ nav ul li a:hover{
     color:#fff;
 }
 
-/* Abstract Shape */
 .hero-shape{
-    width:400px;
-    height:400px;
+    width:350px;
+    height:350px;
     background:radial-gradient(circle at 30% 30%, #333, #000);
     border-radius:50%;
-    filter:blur(10px);
+    filter:blur(8px);
     animation:float 6s ease-in-out infinite;
 }
 
 @keyframes float{
-    0%,100%{transform:translateY(0px);}
+    0%,100%{transform:translateY(0);}
     50%{transform:translateY(-20px);}
+}
+
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:120px;
+    }
+
+    .hero-text h1{
+        font-size:36px;
+    }
+
+    .hero-text p{
+        font-size:18px;
+    }
+
+    .hero-shape{
+        margin-top:40px;
+        width:220px;
+        height:220px;
+    }
 }
 
 /* SECTION */
 .section{
-    padding:120px 80px;
+    padding:100px 60px;
+}
+
+@media(max-width:900px){
+    .section{
+        padding:80px 20px;
+    }
 }
 
 .section h2{
-    font-size:40px;
+    font-size:36px;
     margin-bottom:40px;
 }
 
 /* PORTFOLIO */
 .portfolio-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:40px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
 }
 
 .card{
-    padding:40px;
+    padding:35px;
     border:1px solid #ddd;
     transition:0.4s ease;
-    cursor:pointer;
-}
-
-.card h3{
-    margin-bottom:15px;
 }
 
 .card:hover{
     background:#000;
     color:#fff;
-    transform:translateY(-8px);
+    transform:translateY(-6px);
 }
 
 /* BLACK SECTION */
@@ -178,51 +235,35 @@ nav ul li a:hover{
 
 .black-section p{
     max-width:600px;
-    margin:0 auto 40px auto;
+    margin:0 auto 40px;
     color:#aaa;
 }
 
 .why-grid{
-    margin-top:60px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:30px;
+    margin-top:50px;
 }
 
 .why-box{
     background:#111;
-    padding:40px;
-    transition:0.3s ease;
-}
-
-.why-box:hover{
-    background:#222;
+    padding:35px;
 }
 
 /* FOOTER */
 footer{
     background:#000;
     color:#fff;
-    padding:60px 80px;
+    padding:60px 40px;
     display:flex;
     justify-content:space-between;
     flex-wrap:wrap;
 }
 
-footer h4{
-    margin-bottom:15px;
-}
-
-footer p{
-    color:#aaa;
-    margin-bottom:10px;
-}
-
 footer a{
     color:#fff;
     text-decoration:none;
-    display:block;
-    margin-bottom:8px;
     opacity:0.7;
 }
 
@@ -230,28 +271,65 @@ footer a:hover{
     opacity:1;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-    .hero{
-        flex-direction:column;
-        text-align:center;
-        padding-top:120px;
-    }
+/* POPUP MODAL */
+.popup-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
 
-    .hero-shape{
-        margin-top:60px;
-        width:250px;
-        height:250px;
-    }
+.popup{
+    background:#fff;
+    padding:50px 40px;
+    max-width:400px;
+    text-align:center;
+    border-radius:8px;
+    animation:fadeIn 0.5s ease;
+}
+
+.popup h2{
+    margin-bottom:15px;
+}
+
+.popup p{
+    margin-bottom:25px;
+    color:#555;
+}
+
+.close-btn{
+    padding:12px 25px;
+    background:#000;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:scale(0.9);}
+    to{opacity:1; transform:scale(1);}
 }
 </style>
 </head>
 
 <body>
 
+<!-- POPUP -->
+<div class="popup-overlay" id="popup">
+    <div class="popup">
+        <h2>🚀 We Are Live</h2>
+        <p>HEM Africa is officially live. Stay tuned — something powerful is coming.</p>
+        <button class="close-btn" onclick="closePopup()">Enter Site</button>
+    </div>
+</div>
+
 <nav>
     <div class="logo">HEM</div>
-    <ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="navLinks">
         <li><a href="#">Home</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">About</a></li>
@@ -262,7 +340,7 @@ footer a:hover{
 <section class="hero">
     <div class="hero-text">
         <h1>Building Africa’s Future Through Innovation</h1>
-        <p>HEM is a visionary project focused on empowering African communities through technology, development, and sustainable solutions.</p>
+        <p>HEM is a visionary project empowering communities through technology and sustainable development.</p>
         <div class="buttons">
             <div class="btn btn-black">Explore Projects</div>
             <div class="btn btn-outline">Become a Partner</div>
@@ -276,52 +354,45 @@ footer a:hover{
     <div class="portfolio-grid">
         <div class="card">
             <h3>Smart Infrastructure</h3>
-            <p>Innovative urban development systems designed for sustainable African cities.</p>
+            <p>Urban systems for sustainable cities.</p>
         </div>
         <div class="card">
             <h3>Education Platforms</h3>
-            <p>Digital solutions transforming access to quality education across regions.</p>
+            <p>Digital learning across Africa.</p>
         </div>
         <div class="card">
             <h3>Renewable Energy</h3>
-            <p>Scalable clean energy solutions for underserved communities.</p>
+            <p>Clean scalable power solutions.</p>
         </div>
     </div>
 </section>
 
 <section class="section black-section">
     <h2>Why HEM?</h2>
-    <p>We combine strategy, technology, and purpose to create long-term impact across Africa.</p>
-
+    <p>Strategy. Technology. Impact.</p>
     <div class="why-grid">
-        <div class="why-box">
-            <h3>Innovation</h3>
-            <p>We leverage cutting-edge technology to build scalable solutions.</p>
-        </div>
-        <div class="why-box">
-            <h3>Sustainability</h3>
-            <p>Every project is designed with long-term environmental impact in mind.</p>
-        </div>
-        <div class="why-box">
-            <h3>Community Driven</h3>
-            <p>We empower local communities through inclusive development.</p>
-        </div>
+        <div class="why-box">Innovation</div>
+        <div class="why-box">Sustainability</div>
+        <div class="why-box">Community Driven</div>
     </div>
 </section>
 
 <footer>
     <div>
         <h4>HEM Africa</h4>
-        <p>Building Africa’s future responsibly.</p>
         <p>support@hemafrica.com</p>
     </div>
-    <div>
-        <h4>Links</h4>
-        <a href="#">Projects</a>
-        <a href="#">About</a>
-        <a href="#">Partner</a>
-    </div>
 </footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+function closePopup(){
+    document.getElementById("popup").style.display="none";
+}
+</script>
 
 </body>
 </html>
